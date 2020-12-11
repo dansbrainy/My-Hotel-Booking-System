@@ -101,7 +101,7 @@ class Room(db.Model):
     description = db.Column(db.String(200))
     capacity = db.Column(db.Integer)        #number of people who can stay in the room
     room_type_id = db.Column(db.Integer, db.ForeignKey('room_types.id'))
-    price = db.Column(db.Decimal)
+    price = db.Column(db.Numeric(13,2))
 
     def __repr__(self):
         return '<Role: {}>'.format(self.name)
